@@ -10,3 +10,9 @@ build/*
 .DS_Store
 profile
 
+build/ 
+*.pyc 
+*~.nib/ 
+*.pbxuser 
+*.perspective 
+*.perspectivev3 
