@@ -296,7 +296,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>509 387 1052 629 0 0 1600 1178 </string>
+						<string>290 463 1052 629 0 0 1600 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -326,10 +326,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E002AEE50FCFBD71005E1241</string>
+										<string>E002AEF10FCFBEAC005E1241</string>
 										<key>history</key>
 										<array>
-											<string>E002AEE40FCFBD71005E1241</string>
+											<string>E002AEE50FCFBD71005E1241</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -343,7 +343,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {844, 410}}</string>
 								<key>RubberWindowFrame</key>
-								<string>509 387 1052 629 0 0 1600 1178 </string>
+								<string>290 463 1052 629 0 0 1600 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -363,7 +363,7 @@
 								<key>Frame</key>
 								<string>{{0, 415}, {844, 173}}</string>
 								<key>RubberWindowFrame</key>
-								<string>509 387 1052 629 0 0 1600 1178 </string>
+								<string>290 463 1052 629 0 0 1600 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -387,9 +387,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E002AED80FCFBD47005E1241</string>
+				<string>E002AEF20FCFBEAC005E1241</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E002AED90FCFBD47005E1241</string>
+				<string>E002AEF30FCFBEAC005E1241</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -523,13 +523,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>E002AECC0FCFBC7C005E1241</string>
 		<string>/Users/codeofficer/work/stanford-iphone-course/lectures/01/01-Slider/Slider.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>509 387 1052 629 0 0 1600 1178 </string>
+	<string>290 463 1052 629 0 0 1600 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
