@@ -2,11 +2,12 @@
 
 
 void PrintPathInfo() {
-  NSString *path = @"~";
-  NSLog(@"My home folder is at '%@'", [path stringByExpandingTildeInPath]);
-  // NSArray *pathComponents = [path pathComponents];
-  // NSLog([pathComponents description]);
-  // NSLog([path stringByExpandingTildeInPath]);
+	NSString *path				= @"~";
+	NSString *full_path			= [path stringByExpandingTildeInPath];
+	NSLog(@"My home folder is at '%@'", full_path);
+	for (NSString *component in [full_path pathComponents]) {
+		NSLog(component);
+	}
 }
 
 void PrintProcessInfo() {
