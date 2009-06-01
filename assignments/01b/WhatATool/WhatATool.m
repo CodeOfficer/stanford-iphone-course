@@ -11,7 +11,9 @@ void PrintPathInfo() {
 }
 
 void PrintProcessInfo() {
-  
+  NSString *processName = [[NSProcessInfo processInfo] processName];
+  int processIdentifier = [[NSProcessInfo processInfo] processIdentifier];
+  NSLog(@"Process Name: '%@' Process ID: '%d'", processName, processIdentifier);
 }
 
 void PrintBookmarkInfo() {
