@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "PolygonShape.h"
 
 void PrintPathInfo() {
 	NSString *path = @"~";
@@ -89,7 +90,10 @@ void PrintIntrospectionInfo() {
 }
 
 void PrintPolygonInfo() {
-	
+	PolygonShape *poly = [[PolygonShape alloc] initWithNumberOfSides:6 minimumNumberOfSides:2 maximumNumberOfSides:12];
+	NSLog(@"PolygonShape's minimumNumberOfSides is: '%d'", [poly minimumNumberOfSides]);
+	NSLog(@"PolygonShape's maximumNumberOfSides is: '%d'", [poly maximumNumberOfSides]);
+	NSLog(@"PolygonShape's numberOfSides is: '%d'", [poly numberOfSides]);
 }
 
 int main (int argc, const char * argv[]) {
@@ -99,8 +103,16 @@ int main (int argc, const char * argv[]) {
     PrintProcessInfo();         // Section 2
     PrintBookmarkInfo();        // Section 3
     PrintIntrospectionInfo();   // Section 4
-	PrintPolygonInfo();			// Section 6 (No function for section 5) 
+    PrintPolygonInfo();         // Section 6 (No function for section 5) 
 
     [pool release];
     return 0;
 }
+
+
+
+
+
+
+
+

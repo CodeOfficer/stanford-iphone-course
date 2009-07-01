@@ -20,23 +20,17 @@
 	
 }
 
-@property(readwrite, assign) int numberOfSides;
-@property(readwrite, assign) int minimumNumberOfSides;
-@property(readwrite, assign) int maximumNumberOfSides;
-@property(readonly, assign) float angleInDegrees;
-@property(readonly, assign) float angleInRadians;
-@property(readonly, assign) NSString *name;
-
-//- (int) numberOfSides;
+@property int numberOfSides;
+@property int minimumNumberOfSides;
+@property int maximumNumberOfSides;
+@property(readonly) float angleInDegrees;
+@property(readonly) float angleInRadians;
+@property(readonly) NSString *name;
 
 - (void) setNumberOfSides: (int) newNumber;
-
+- (void) setMinimumNumberOfSides: (int) newNumber;
+- (void) setMaximumNumberOfSides: (int) newNumber;
+- (id)initWithNumberOfSides:(int)sides minimumNumberOfSides:(int)min maximumNumberOfSides:(int)max;
 
 @end
 
-//  numberOfSides – an int value 
-//  minimumNumberOfSides – an int value 
-//•  maximumNumberOfSides –an int value 
-//•  angleInDegrees –a float value, readonly 
-//  angleInRadians – a float value, readonly 
-//  name – an NSString object, readonly 

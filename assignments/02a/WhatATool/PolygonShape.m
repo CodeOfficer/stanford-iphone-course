@@ -18,25 +18,40 @@
 @synthesize angleInRadians;
 @synthesize name;
 
+- (id) initWithNumberOfSides:(int)sides minimumNumberOfSides:(int)min maximumNumberOfSides:(int)max {
+  self = [super init];
+  if (self != nil) {
+    [self setMinimumNumberOfSides:min];
+    [self setMaximumNumberOfSides:max];
+    [self setNumberOfSides:sides];
+  }
+  return self;
+}
+
+// between minimum and maximum
 - (void) setNumberOfSides: (int) newNumber {
-	if (newNumber > maximumNumberOfSides) {
-		NSLog(@"Invalid number of sides: %d is greater than the maximum of %d allowed", numberOfSides, maximumNumberOfSides);
-	} else if (newNumber < minimumNumberOfSides) {
-		NSLog(@"Invalid number of sides: %d is less than the minimum of %d allowed", numberOfSides, minimumNumberOfSides);
+	if ((newNumber > maximumNumberOfSides) || (newNumber < minimumNumberOfSides)) {
+		NSLog(@"Invalid NUMBER of sides: '%d' is must be between '%d' and '%d'", newNumber, minimumNumberOfSides, maximumNumberOfSides);
 	} else {
 		numberOfSides = newNumber;
 	}
 }
 
-- (void) setMinimumNumberOfSides: (int) newNumber {
+// greater than 2
+- (void) setMinimumNumberOfSides: (int) newNumber {  
 	if (newNumber < 2) {
-		NSLog(@"Invalid minimum number of sides: %d is less than the allowed minimum of 2", numberOfSides);
-	} else if (newNumber > numberOfSides) {
-		NSLog(@"Invalid minimum number of sides: %d is greater than the current of %d", numberOfSides, minimumNumberOfSides);
-	} else if (newNumber > maximumNumberOfSides) {
-		NSLog(@"Invalid minimum number of sides: %d is greater than the maximum of %d allowed", numberOfSides, maximumNumberOfSides);
+		NSLog(@"Invalid MINIMUM number of sides: '%d' is less than the lower '2'", newNumber);
 	} else {
 		minimumNumberOfSides = newNumber;
+	}
+}
+
+// less than or equal to 12
+- (void) setMaximumNumberOfSides: (int) newNumber {	
+  if (newNumber > 12) {
+		NSLog(@"Invalid MAXIMUM number of sides: '%d' is greater than the upper '12'", newNumber);
+	} else {
+		maximumNumberOfSides = newNumber;
 	}
 }
 
