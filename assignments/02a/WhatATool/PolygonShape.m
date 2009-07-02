@@ -14,9 +14,15 @@
 @synthesize numberOfSides;
 @synthesize minimumNumberOfSides;
 @synthesize maximumNumberOfSides;
-@synthesize angleInDegrees;
-@synthesize angleInRadians;
-@synthesize name;
+
+
+- (id) init {
+  self = [super init];
+  if (self != nil) {
+  }
+  return [self initWithNumberOfSides: 5 minimumNumberOfSides: 3 maximumNumberOfSides: 10];
+}
+
 
 - (id) initWithNumberOfSides:(int)sides minimumNumberOfSides:(int)min maximumNumberOfSides:(int)max {
   self = [super init];
@@ -28,7 +34,62 @@
   return self;
 }
 
-// between minimum and maximum
+
+- (float) angleInDegrees {
+  return 180.0 * (numberOfSides-2) / numberOfSides;
+}
+
+
+- (float) angleInRadians {
+    return [self angleInDegrees] * (M_PI / 180.0);
+}
+
+
+- (NSString *) name {
+  switch (numberOfSides) {
+    case 3:
+      return @"Triangle";
+      break;
+    case 4:
+      return @"Quadrilateral";
+      break;
+    case 5:
+      return @"Pentagon";
+      break;
+    case 6:
+      return @"Hexagon";
+      break;
+    case 7:
+      return @"Septagon";
+      break;
+    case 8:
+      return @"Octagon";
+      break;
+    case 9:
+      return @"Nonagon";
+      break;
+    case 10:
+      return @"Decagon";
+      break;
+    case 11:
+      return @"Hendecagon";
+      break;
+    case 12:
+      return @"Dodecagon";
+      break;
+    default:
+      return @"INVALID NAME";
+      break;
+  }
+}
+
+
+- (NSString *) description {
+  return [NSString stringWithFormat:@"Hello I am a %d-sided polygon (aka a %@) with angles of %f degrees (%f radians)", 
+          numberOfSides, [self name], [self angleInDegrees], [self angleInRadians]];
+}
+
+
 - (void) setNumberOfSides: (int) newNumber {
 	if ((newNumber > maximumNumberOfSides) || (newNumber < minimumNumberOfSides)) {
 		NSLog(@"Invalid NUMBER of sides: '%d' is must be between '%d' and '%d'", newNumber, minimumNumberOfSides, maximumNumberOfSides);
@@ -37,7 +98,7 @@
 	}
 }
 
-// greater than 2
+
 - (void) setMinimumNumberOfSides: (int) newNumber {  
 	if (newNumber < 2) {
 		NSLog(@"Invalid MINIMUM number of sides: '%d' is less than the lower '2'", newNumber);
@@ -46,7 +107,7 @@
 	}
 }
 
-// less than or equal to 12
+
 - (void) setMaximumNumberOfSides: (int) newNumber {	
   if (newNumber > 12) {
 		NSLog(@"Invalid MAXIMUM number of sides: '%d' is greater than the upper '12'", newNumber);
@@ -54,5 +115,12 @@
 		maximumNumberOfSides = newNumber;
 	}
 }
+
+- (void) dealloc {
+  NSLog(@"Deallocating your ass!");
+  [super dealloc];
+}
+
+
 
 @end

@@ -1,7 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "PolygonShape.h"
 
+
 void PrintPathInfo() {
+  NSLog(@".............................");
 	NSString *path = @"~";
 	NSString *full_path = [path stringByExpandingTildeInPath];
 	NSLog(@"My home folder is at '%@'", full_path);
@@ -10,13 +12,17 @@ void PrintPathInfo() {
 	}
 }
 
+
 void PrintProcessInfo() {
+  NSLog(@".............................");
 	NSString *processName = [[NSProcessInfo processInfo] processName];
 	int processIdentifier = [[NSProcessInfo processInfo] processIdentifier];
 	NSLog(@"Process Name: '%@' Process ID: '%d'", processName, processIdentifier);
 }
 
+
 void PrintBookmarkInfo() {
+  NSLog(@".............................");
 	NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
 
 	NSURL *url1 = [NSURL URLWithString:@"http://www.stanford.edu"];
@@ -57,6 +63,7 @@ void PrintBookmarkInfo() {
 	}
 }
 
+
 void PrintIntrospectionInfo() {
 	NSString *string1 = @"A Web Developer From Maine";
 	NSMutableString *string2 = @"No Really!";
@@ -77,7 +84,6 @@ void PrintIntrospectionInfo() {
 		isKind = [object isKindOfClass:[NSString class]] ? YES : NO;
 		respondsToLowercaseString = [object respondsToSelector:selector] ? YES : NO;
 
-		NSLog(@".............................");
 		NSLog(@"Class Name: '%@'", [object className]);
 		NSLog(@"Is Member of NSString: %@", (isMember ? @"YES" : @"NO"));
 		NSLog(@"Is Kind of NSString: %@", (isKind ? @"YES" : @"NO"));
@@ -89,12 +95,44 @@ void PrintIntrospectionInfo() {
 	}
 }
 
+
 void PrintPolygonInfo() {
-	PolygonShape *poly = [[PolygonShape alloc] initWithNumberOfSides:6 minimumNumberOfSides:2 maximumNumberOfSides:12];
-	NSLog(@"PolygonShape's minimumNumberOfSides is: '%d'", [poly minimumNumberOfSides]);
-	NSLog(@"PolygonShape's maximumNumberOfSides is: '%d'", [poly maximumNumberOfSides]);
-	NSLog(@"PolygonShape's numberOfSides is: '%d'", [poly numberOfSides]);
+  NSLog(@".............................");
+  NSMutableArray *polys = [[NSMutableArray alloc] init];
+  
+  [polys addObject:[[[PolygonShape alloc] initWithNumberOfSides:4 minimumNumberOfSides:3 maximumNumberOfSides:7] autorelease]];
+  [polys addObject:[[[PolygonShape alloc] initWithNumberOfSides:6 minimumNumberOfSides:5 maximumNumberOfSides:9] autorelease]];
+  [polys addObject:[[[PolygonShape alloc] initWithNumberOfSides:12 minimumNumberOfSides:9 maximumNumberOfSides:12] autorelease]];
+  
+  for (PolygonShape *poly in polys) {
+    NSLog([poly description]);
+  }
+  [polys release];
+  
+  
+//  NSLog(@".............................");
+//	PolygonShape *poly1 = [[PolygonShape alloc] initWithNumberOfSides:6 minimumNumberOfSides:2 maximumNumberOfSides:12];
+//	NSLog(@"PolygonShape's minimumNumberOfSides is: '%d'", [poly1 minimumNumberOfSides]);
+//	NSLog(@"PolygonShape's maximumNumberOfSides is: '%d'", [poly1 maximumNumberOfSides]);
+//	NSLog(@"PolygonShape's numberOfSides is: '%d'", [poly1 numberOfSides]);
+//	NSLog(@"PolygonShape's angleInDegrees is: '%f'", [poly1 angleInDegrees]);
+//	NSLog(@"PolygonShape's angleInRadians is: '%f'", [poly1 angleInRadians]);
+//	NSLog(@"PolygonShape's name is: '%@'", [poly1 name]);
+//	NSLog(@"PolygonShape's polyDescription is: '%@'", [poly1 description]);
+//	NSLog(@"PolygonShape's retainCount is: '%d'", [poly1 retainCount]);
+//  [poly1 release];
+//  NSLog(@".............................");
+//	PolygonShape *poly2 = [[PolygonShape alloc] init];
+//	NSLog(@"PolygonShape's minimumNumberOfSides is: '%d'", [poly2 minimumNumberOfSides]);
+//	NSLog(@"PolygonShape's maximumNumberOfSides is: '%d'", [poly2 maximumNumberOfSides]);
+//	NSLog(@"PolygonShape's numberOfSides is: '%d'", [poly2 numberOfSides]);
+//	NSLog(@"PolygonShape's angleInDegrees is: '%f'", [poly2 angleInDegrees]);
+//	NSLog(@"PolygonShape's angleInRadians is: '%f'", [poly2 angleInRadians]);
+//	NSLog(@"PolygonShape's name is: '%@'", [poly2 name]);
+//	NSLog(@"PolygonShape's polyDescription is: '%@'", [poly2 description]);
+//  [poly2 release];
 }
+
 
 int main (int argc, const char * argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
