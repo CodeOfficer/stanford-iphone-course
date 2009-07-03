@@ -17,16 +17,14 @@
 
 
 - (id) init {
-  self = [super init];
-  if (self != nil) {
+  if (self = [super init]) {
   }
   return [self initWithNumberOfSides: 5 minimumNumberOfSides: 3 maximumNumberOfSides: 10];
 }
 
 
 - (id) initWithNumberOfSides:(int)sides minimumNumberOfSides:(int)min maximumNumberOfSides:(int)max {
-  self = [super init];
-  if (self != nil) {
+  if (self = [super init]) {
     [self setMinimumNumberOfSides:min];
     [self setMaximumNumberOfSides:max];
     [self setNumberOfSides:sides];
